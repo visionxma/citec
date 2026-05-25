@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { LivePanel } from "@/components/LivePanel";
 import { Stats } from "@/components/Stats";
+import { Gallery } from "@/components/Gallery";
 import { Tracks } from "@/components/Tracks";
 import { QuickAccess } from "@/components/QuickAccess";
 import { Sponsors } from "@/components/Sponsors";
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <LivePanel />
       <Stats />
+      <Gallery />
       <Tracks />
       <QuickAccess />
       <Sponsors />

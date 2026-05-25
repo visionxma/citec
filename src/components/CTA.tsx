@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -14,6 +15,14 @@ export function CTA() {
         transition={{ duration: 0.8 }}
         className="relative rounded-2xl sm:rounded-[2rem] overflow-hidden bg-gradient-to-br from-pink via-pink-dark to-accent p-6 sm:p-8 md:p-12 text-center"
       >
+        {/* Foto de obra como textura, fundida no gradiente */}
+        <Image
+          src="/images/eng-estrutura.jpg"
+          alt=""
+          fill
+          sizes="(max-width: 1280px) 100vw, 1216px"
+          className="object-cover opacity-25 mix-blend-overlay pointer-events-none"
+        />
         <div className="absolute inset-0 bg-hatch-bold opacity-40" />
         {/* Faixa estilo "atenção obra" no topo */}
         <div className="absolute top-0 inset-x-0 h-2 bg-hatch-bold" style={{ backgroundColor: "rgba(0,0,0,0.4)" }} />
