@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+.claude/
+.env*
+*.log
+.DS_Store
+identidade.pdf
