@@ -15,7 +15,21 @@ const TAGS = ["Inovação", "Tecnologia", "Construção Civil", "Engenharia", "A
 export function Hero() {
   return (
     <section className="relative pt-20 sm:pt-24 pb-8 sm:pb-10 spotlight overflow-hidden">
-      <div className="absolute inset-0 bg-blueprint bg-blueprint-cross" />
+      {/* Foto de engenharia ao fundo do topo */}
+      <Image
+        src="/images/eng-hero.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center pointer-events-none"
+      />
+      {/* Escurecimento para manter o logo e os textos legíveis */}
+      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/50 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/30 pointer-events-none" />
+
+      {/* Grade técnica por cima da foto */}
+      <div className="absolute inset-0 bg-blueprint bg-blueprint-cross opacity-60 pointer-events-none" />
 
       {/* Iluminação de fundo estática — sem blobs animados */}
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-pink/15 rounded-full blur-[160px] pointer-events-none" />
