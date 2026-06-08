@@ -15,21 +15,7 @@ const TAGS = ["Inovação", "Tecnologia", "Construção Civil", "Engenharia", "A
 export function Hero() {
   return (
     <section className="relative pt-20 sm:pt-24 pb-8 sm:pb-10 spotlight overflow-hidden">
-      {/* Foto de engenharia ao fundo do topo */}
-      <Image
-        src="/images/eng-hero.jpg"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center pointer-events-none"
-      />
-      {/* Escurecimento para manter o logo e os textos legíveis */}
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/50 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/30 pointer-events-none" />
-
-      {/* Grade técnica por cima da foto */}
-      <div className="absolute inset-0 bg-blueprint bg-blueprint-cross opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 bg-blueprint bg-blueprint-cross" />
 
       {/* Iluminação de fundo estática — sem blobs animados */}
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-pink/15 rounded-full blur-[160px] pointer-events-none" />
@@ -46,43 +32,27 @@ export function Hero() {
             <span className="bg-pink text-white text-[9px] sm:text-[10px] font-bold tracking-[0.15em] uppercase px-2 sm:px-2.5 py-1 rounded-full">
               CITEC 2026
             </span>
-            <span className="text-[11px] sm:text-xs text-white/70">10 — 13 Jun · Teresina, PI</span>
+            <span className="text-[11px] sm:text-xs text-white/70">11 — 13 Jun · Teresina, PI</span>
           </div>
         </motion.div>
 
-        {/* Logo + edição */}
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative max-w-2xl"
-          >
-            <Image
-              src="/logos/citec-color.png"
-              alt="CITEC — Congresso de Inovação, Tecnologia e Construção Civil"
-              width={900}
-              height={400}
-              priority
-              sizes="(max-width: 768px) 90vw, 600px"
-              className="w-full h-auto"
-            />
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="absolute right-0 top-0 hidden lg:block max-w-xs text-right"
-          >
-            <span className="font-serif italic text-2xl text-white/80 leading-tight block">
-              Da sala de aula
-            </span>
-            <span className="font-serif italic text-2xl text-white/40 leading-tight block">
-              ao mercado de trabalho.
-            </span>
-          </motion.p>
-        </div>
+        {/* Banner oficial — substitui o logo (o banner ja contem a marca CITEC) */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="relative max-w-5xl"
+        >
+          <Image
+            src="/images/eng-hero.jpg"
+            alt="CITEC 2026 — Congresso de Inovação, Tecnologia e Construção"
+            width={1920}
+            height={920}
+            priority
+            sizes="(max-width: 1024px) 100vw, 1024px"
+            className="w-full h-auto rounded-2xl sm:rounded-3xl"
+          />
+        </motion.div>
 
         {/* Bottom content grid */}
         <motion.div
@@ -92,7 +62,7 @@ export function Hero() {
           className="mt-6 sm:mt-8 grid gap-6 lg:grid-cols-[1fr_auto] items-end"
         >
           <div className="max-w-xl">
-            <p className="lg:hidden font-serif italic text-lg sm:text-xl text-white/80 mb-4 sm:mb-6">
+            <p className="font-serif italic text-lg sm:text-xl text-white/80 mb-4 sm:mb-6">
               Da sala de aula ao mercado de trabalho.
             </p>
             <p className="text-white/70 text-base sm:text-lg leading-relaxed">
@@ -134,7 +104,7 @@ export function Hero() {
             cells={[
               { label: "Edição", value: "04" },
               { label: "Local", value: "Auditório Afya · Teresina" },
-              { label: "Período", value: "10–13 · 06 · 2026" },
+              { label: "Período", value: "11–13 · 06 · 2026" },
               { label: "Apoio", value: "CREA-PI" },
             ]}
           />

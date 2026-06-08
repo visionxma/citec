@@ -66,7 +66,7 @@ export function QuickAccess() {
 
               {big && (
                 <div className="relative mt-4 sm:mt-5 pt-4 sm:pt-5 border-t border-white/10 text-xs sm:text-sm text-white/50">
-                  <p>Palestra magna · 4 mesas e palestras · minicursos manhã e tarde no sábado.</p>
+                  <p>Palestra magna · mesa redonda · 3 palestras · 12 minicursos no sábado.</p>
                 </div>
               )}
             </Link>

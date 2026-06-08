@@ -4,10 +4,10 @@ import { motion, useInView, useMotionValue, useTransform, animate } from "framer
 import { useEffect, useRef } from "react";
 
 const STATS = [
-  { value: 4, suffix: "", label: "Dias de evento" },
-  { value: 9, suffix: "+", label: "Sessões oficiais" },
-  { value: 2, suffix: "", label: "Mesas redondas" },
-  { value: 6, suffix: "+", label: "Minicursos práticos" },
+  { value: 3, suffix: "", label: "Dias de evento" },
+  { value: 18, suffix: "", label: "Sessões oficiais" },
+  { value: 21, suffix: "", label: "Palestrantes" },
+  { value: 12, suffix: "", label: "Minicursos práticos" },
 ];
 
 function Counter({ to, suffix }: { to: number; suffix: string }) {
