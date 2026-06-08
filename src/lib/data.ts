@@ -177,56 +177,17 @@ export const palestras: Palestra[] = [
 ];
 
 export const patrocinadores: Patrocinador[] = [
-  {
-    id: "s1",
-    nome: "AFYA",
-    logo: "/logos/afya.png",
-    tier: "diamante",
-    site: "https://afya.com.br",
-    instagram: "afya",
-    descricao: "Patrocinador principal do CITEC 2026. Apoiando a inovação e a construção do futuro.",
-    principal: true,
-  },
-  {
-    id: "s2",
-    nome: "BuildTech",
-    logo: "https://placehold.co/240x120/D4145A/FFFFFF?text=BUILDTECH",
-    tier: "ouro",
-    site: "https://example.com",
-    instagram: "buildtech",
-  },
-  {
-    id: "s3",
-    nome: "Habitat",
-    logo: "https://placehold.co/240x120/2E3192/FFFFFF?text=HABITAT",
-    tier: "ouro",
-    site: "https://example.com",
-    instagram: "habitat",
-  },
-  {
-    id: "s4",
-    nome: "ArqLab",
-    logo: "https://placehold.co/240x120/8B0E3C/FFFFFF?text=ARQLAB",
-    tier: "prata",
-    site: "https://example.com",
-    instagram: "arqlab",
-  },
-  {
-    id: "s5",
-    nome: "DroneOps",
-    logo: "https://placehold.co/240x120/0A0A0A/FF2E7E?text=DRONEOPS",
-    tier: "prata",
-    site: "https://example.com",
-    instagram: "droneops",
-  },
-  {
-    id: "s6",
-    nome: "Smartbuild",
-    logo: "https://placehold.co/240x120/FFFFFF/0A0A0A?text=SMARTBUILD",
-    tier: "prata",
-    site: "https://example.com",
-    instagram: "smartbuild",
-  },
+  { id: "s1",  nome: "LJ Engenharia",        logo: "", tier: "diamante", principal: true },
+  { id: "s2",  nome: "Inspectum Engenharia", logo: "", tier: "ouro" },
+  { id: "s3",  nome: "JCI Engenharia",       logo: "", tier: "ouro" },
+  { id: "s4",  nome: "Construrappi",         logo: "", tier: "ouro" },
+  { id: "s5",  nome: "Construtora Belvedere", logo: "", tier: "ouro" },
+  { id: "s6",  nome: "CREA",                 logo: "", tier: "ouro" },
+  { id: "s7",  nome: "Copperline",           logo: "", tier: "prata" },
+  { id: "s8",  nome: "MM Locações",          logo: "", tier: "prata" },
+  { id: "s9",  nome: "CREA Jr",              logo: "", tier: "prata" },
+  { id: "s10", nome: "Jovem Engenheiro",     logo: "", tier: "prata" },
+  { id: "s11", nome: "VisionX",              logo: "", tier: "prata" },
 ];
 
 export function getPalestrante(id: string | null) {

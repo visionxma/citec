@@ -73,7 +73,9 @@ export default function IngressoJogos() {
 
             {step === "instagram" && (
               <motion.div key="ig" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="text-center">
-                <h2 className="font-display text-2xl sm:text-3xl break-all px-2">Siga @{sponsor.instagram}</h2>
+                <h2 className="font-display text-2xl sm:text-3xl break-all px-2">
+                  {sponsor.instagram ? `Siga @${sponsor.instagram}` : `Siga ${sponsor.nome}`}
+                </h2>
                 <p className="text-sm sm:text-base text-white/70 mt-3 leading-relaxed">
                   <span className="font-semibold text-white">{sponsor.nome}</span> é nosso patrocinador principal e torna o CITEC possível.
                 </p>
@@ -81,9 +83,11 @@ export default function IngressoJogos() {
                   onClick={abrirInstagram}
                   className="mt-6 sm:mt-8 w-full bg-gradient-to-r from-pink-light via-pink to-accent text-white font-semibold py-3.5 sm:py-4 rounded-2xl inline-flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform"
                 >
-                  <Instagram size={18} /> Abrir Instagram
+                  <Instagram size={18} /> {sponsor.instagram ? "Abrir Instagram" : "Continuar"}
                 </button>
-                <p className="text-xs text-white/40 mt-4">Após seguir, volte aqui para continuar.</p>
+                <p className="text-xs text-white/40 mt-4">
+                  {sponsor.instagram ? "Após seguir, volte aqui para continuar." : "Em breve o Instagram do patrocinador."}
+                </p>
               </motion.div>
             )}
 
