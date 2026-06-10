@@ -333,7 +333,7 @@ export const patrocinadores: Patrocinador[] = [
   { id: "s11", nome: "Jovem Engenheiro",      logo: "/logos/sponsors/jovem-engenheiro.png", tier: "prata" },
   { id: "s12", nome: "CREA Jr",               logo: "",                                  tier: "prata" },
   { id: "s13", nome: "CREA",                  logo: "/logos/sponsors/crea.png",          tier: "prata" },
-  { id: "s14", nome: "VisionX",               logo: "",                                  tier: "prata" },
+  { id: "s14", nome: "VisionX",               logo: "/logos/sponsors/visionx.png",       tier: "prata" },
   { id: "s15", nome: "São José",              logo: "/logos/sponsors/sao-jose.png",      tier: "prata" },
   { id: "s16", nome: "David Brandão",         logo: "/logos/sponsors/david-brandao.png", tier: "prata" },
   { id: "s17", nome: "Expanserv",             logo: "/logos/sponsors/expanserv.png",     tier: "prata" },
