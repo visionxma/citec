@@ -69,10 +69,10 @@ export function Sponsors() {
         </div>
       )}
 
-      {/* Gold + Silver marquees */}
+      {/* Patrocinadores (antigo Ouro) */}
       {ouro.length > 0 && (
         <div className="relative mb-4">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2 px-4 max-w-7xl mx-auto">Ouro</p>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2 px-4 max-w-7xl mx-auto">Patrocinadores</p>
           <div className="overflow-hidden marquee-mask">
             <div className="flex gap-3 animate-marquee w-max">
               {[...ouro, ...ouro, ...ouro, ...ouro].map((s, i) => (
@@ -89,18 +89,19 @@ export function Sponsors() {
         </div>
       )}
 
+      {/* Parceiros (antigo Prata) — mesmo tamanho dos patrocinadores */}
       {prata.length > 0 && (
         <div className="relative">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2 px-4 max-w-7xl mx-auto">Prata</p>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2 px-4 max-w-7xl mx-auto">Parceiros</p>
           <div className="overflow-hidden marquee-mask">
-            <div className="flex gap-2 animate-marquee-reverse w-max">
+            <div className="flex gap-3 animate-marquee-reverse w-max">
               {[...prata, ...prata, ...prata, ...prata].map((s, i) => (
                 <button
                   key={`${s.id}-${i}`}
                   onClick={() => setOpen(s)}
-                  className="shrink-0 w-36 sm:w-44 h-16 sm:h-20 rounded-xl border border-white/10 bg-ink-soft hover:border-pink hover:bg-pink/5 transition flex items-center justify-center p-2.5 sm:p-3"
+                  className="shrink-0 w-44 sm:w-56 h-20 sm:h-24 rounded-xl sm:rounded-2xl border border-white/10 bg-ink-soft hover:border-pink hover:bg-pink/5 transition flex items-center justify-center p-3 sm:p-4"
                 >
-                  <SponsorMark s={s} size="sm" />
+                  <SponsorMark s={s} size="md" />
                 </button>
               ))}
             </div>
@@ -131,7 +132,7 @@ export function Sponsors() {
               <SponsorMark s={open} size="md" />
             </div>
             <p className="text-[10px] uppercase tracking-[0.25em] text-pink-light">
-              Patrocinador {open.tier}
+              {open.tier === "diamante" ? "Patrocinador Diamante" : open.tier === "ouro" ? "Patrocinador" : "Parceiro"}
             </p>
             <h3 className="font-display text-2xl sm:text-3xl mt-1">{open.nome}</h3>
             {open.descricao && <p className="text-sm text-white/70 mt-3">{open.descricao}</p>}

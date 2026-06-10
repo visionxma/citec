@@ -1,4 +1,4 @@
-import { getPalestraBySlug, getPalestrante, palestras } from "@/lib/data";
+import { getPalestraBySlug, getPalestrantesDePalestra, palestras } from "@/lib/data";
 import { formatDate, formatTime } from "@/lib/format";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -26,7 +26,7 @@ const labels = {
 export default function PalestraPage({ params }: { params: { slug: string } }) {
   const palestra = getPalestraBySlug(params.slug);
   if (!palestra) notFound();
-  const sp = getPalestrante(palestra.palestranteId);
+  const sps = getPalestrantesDePalestra(palestra);
 
   return (
     <div className="relative pt-20 sm:pt-24 pb-10">
@@ -52,22 +52,28 @@ export default function PalestraPage({ params }: { params: { slug: string } }) {
           </span>
         </div>
 
-        {sp && (
-          <div className="mt-5 sm:mt-6 flex gap-3 sm:gap-4 items-start rounded-2xl sm:rounded-3xl glass p-4 sm:p-5">
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden shrink-0">
-              <Image src={sp.foto} alt={sp.nome} fill className="object-cover" sizes="64px" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-[10px] uppercase tracking-[0.25em] text-pink-light">Palestrante</p>
-              <p className="font-display text-lg sm:text-2xl mt-1">{sp.nome}</p>
-              <p className="text-xs sm:text-sm text-white/60">{sp.cargo}</p>
-              <p className="text-xs sm:text-sm text-white/70 mt-2 sm:mt-3 leading-relaxed">{sp.bio}</p>
-              {sp.instagram && (
-                <a href={`https://instagram.com/${sp.instagram}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-xs text-pink-light hover:text-white mt-3">
-                  <Instagram size={12} /> @{sp.instagram}
-                </a>
-              )}
-            </div>
+        {sps.length > 0 && (
+          <div className="mt-5 sm:mt-6 space-y-3 sm:space-y-4">
+            {sps.map((sp, i) => (
+              <div key={sp.id} className="flex gap-3 sm:gap-4 items-start rounded-2xl sm:rounded-3xl glass p-4 sm:p-5">
+                <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden shrink-0">
+                  <Image src={sp.foto} alt={sp.nome} fill className="object-cover" sizes="64px" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-pink-light">
+                    {sps.length > 1 ? `Convidado ${String(i + 1).padStart(2, "0")}` : "Palestrante"}
+                  </p>
+                  <p className="font-display text-lg sm:text-2xl mt-1">{sp.nome}</p>
+                  <p className="text-xs sm:text-sm text-white/60">{sp.cargo}</p>
+                  <p className="text-xs sm:text-sm text-white/70 mt-2 sm:mt-3 leading-relaxed">{sp.bio}</p>
+                  {sp.instagram && (
+                    <a href={`https://instagram.com/${sp.instagram}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-xs text-pink-light hover:text-white mt-3">
+                      <Instagram size={12} /> @{sp.instagram}
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         )}
 

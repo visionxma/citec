@@ -8,26 +8,26 @@ const SHOTS = [
   {
     src: "/images/eng-projeto.jpg",
     alt: "Engenheiro desenhando uma planta técnica com escala sobre a prancheta",
-    eyebrow: "Projeto",
-    title: "Da prancheta ao detalhe",
+    eyebrow: "Análise",
+    title: "Viabilidade do empreendimento",
   },
   {
     src: "/images/eng-obra.jpg",
     alt: "Operários e armaduras de aço em um canteiro de obras visto do alto",
-    eyebrow: "Construção",
-    title: "No canteiro de obras",
-  },
-  {
-    src: "/images/eng-equipe.jpg",
-    alt: "Equipe de engenheiros de capacete sobre uma laje em construção",
-    eyebrow: "Equipe",
-    title: "Engenharia em campo",
+    eyebrow: "Prefeitura",
+    title: "Licenças e aprovações",
   },
   {
     src: "/images/eng-arquitetura.jpg",
     alt: "Arranha-céus de vidro vistos de baixo para cima",
-    eyebrow: "Inovação",
-    title: "O que construímos",
+    eyebrow: "CREA",
+    title: "Responsabilidade técnica",
+  },
+  {
+    src: "/images/eng-equipe.jpg",
+    alt: "Equipe de engenheiros de capacete sobre uma laje em construção",
+    eyebrow: "Construção",
+    title: "Gestão de equipes",
   },
 ];
 
@@ -37,9 +37,9 @@ export function Gallery() {
       <DimensionLine label="Inovação · Tecnologia · Construção" className="mb-6 sm:mb-8" />
 
       <div className="flex items-end justify-between gap-3 mb-5 sm:mb-6 flex-wrap">
-        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl leading-none">Do projeto à obra</h2>
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl leading-none">Da sala de aula ao mercado de trabalho</h2>
         <span className="text-xs sm:text-sm text-white/50 max-w-xs sm:text-right">
-          Da prancheta ao canteiro — o que a engenharia reúne em três dias.
+          O caminho do projeto à obra — o que a engenharia reúne em três dias.
         </span>
       </div>
 

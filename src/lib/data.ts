@@ -8,6 +8,9 @@ export const EVENTO = {
   dataFim: "2026-06-13T16:00:00-03:00",
   local: "Auditório Afya Uninovafapi — Teresina, PI",
   cidade: "Teresina, PI",
+  // Perfil oficial do evento (usado na sala de jogos e no rodape)
+  nomeOficial: "Engenharia Civil Afya Uninovafapi",
+  instagramOficial: "eng.uninovafapi",
 };
 
 export const palestrantes: Palestrante[] = [
@@ -37,8 +40,8 @@ export const palestrantes: Palestrante[] = [
 export const palestras: Palestra[] = [
   {
     id: "t422736",
-    slug: "credenciamento",
-    titulo: "Credenciamento",
+    slug: "credenciamento-e-sala-de-jogos",
+    titulo: "Credenciamento e Sala de Jogos",
     descricao: "Bem-vindos ao CITEC 2026! (Check-in e Credenciamento) O ponto de partida para a nossa imersão em construção e tecnologia! Chegue a partir das 15h no Auditório Afya para retirar sua credencial, garantir seu kit do evento e já iniciar o networking com outros participantes e profissionais da área antes da cerimônia de abertura.",
     palestranteId: null,
     sala: "Auditório Afya",
@@ -56,7 +59,7 @@ export const palestras: Palestra[] = [
     palestranteId: null,
     sala: "Auditório Afya",
     inicio: "2026-06-11T18:30:00-03:00",
-    fim: "2026-06-11T19:30:00-03:00",
+    fim: "2026-06-11T19:00:00-03:00",
     trilha: "Construção",
     tipo: "institucional",
     materiais: [],
@@ -75,11 +78,25 @@ export const palestras: Palestra[] = [
     materiais: [],
   },
   {
+    id: "t90001",
+    slug: "encerramento-e-coffee-break-dia-1",
+    titulo: "Encerramento e Coffee Break",
+    descricao: "Encerramento do primeiro dia do CITEC 2026 com coffee break para networking entre os participantes.",
+    palestranteId: null,
+    sala: "Auditório Afya",
+    inicio: "2026-06-11T20:00:00-03:00",
+    fim: "2026-06-11T21:00:00-03:00",
+    trilha: "Construção",
+    tipo: "intervalo",
+    materiais: [],
+  },
+  {
     id: "t422739",
     slug: "viabilidade-de-empreendimentos",
     titulo: "Viabilidade de Empreendimentos",
     descricao: "Chegou o momento de debatermos os rumos da nossa profissão. Junte-se a grandes nomes do mercado para uma troca de experiências franca e interativa. Uma conversa essencial para entender os desafios diários da construção civil por diferentes ângulos.",
     palestranteId: "p-igor-veras",
+    palestrantesExtras: ["p-joao-ibiapino", "p-joefton-trindade"],
     sala: "Auditório Afya",
     inicio: "2026-06-12T14:00:00-03:00",
     fim: "2026-06-12T14:40:00-03:00",
@@ -101,6 +118,19 @@ export const palestras: Palestra[] = [
     materiais: [],
   },
   {
+    id: "t90002",
+    slug: "intervalo-dia-2",
+    titulo: "Intervalo",
+    descricao: "Pausa para café e networking entre as palestras da tarde.",
+    palestranteId: null,
+    sala: "Auditório Afya",
+    inicio: "2026-06-12T15:30:00-03:00",
+    fim: "2026-06-12T16:00:00-03:00",
+    trilha: "Construção",
+    tipo: "intervalo",
+    materiais: [],
+  },
+  {
     id: "t422741",
     slug: "responsabilidades-junto-ao-crea-pi",
     titulo: "Responsabilidades junto ao CREA-PI",
@@ -118,12 +148,13 @@ export const palestras: Palestra[] = [
     slug: "gestao-de-equipes-e-equipamentos",
     titulo: "Gestão de Equipes e Equipamentos",
     descricao: "A obra vai muito além do projeto e dos cálculos! Aprenda as melhores práticas para liderar pessoas, otimizar o uso de maquinário e garantir alta produtividade no canteiro. Uma visão prática de como gerenciar recursos para entregar resultados com eficiência e dentro do prazo.",
-    palestranteId: "p-leopoldo-melo",
+    palestranteId: "p-emmanuel-fonseca",
+    palestrantesExtras: ["p-leopoldo-melo", "p-mikelly-martins"],
     sala: "Auditório Afya",
     inicio: "2026-06-12T16:30:00-03:00",
-    fim: "2026-06-12T17:00:00-03:00",
+    fim: "2026-06-12T17:10:00-03:00",
     trilha: "Construção",
-    tipo: "palestra",
+    tipo: "mesa-redonda",
     materiais: [],
   },
   {
@@ -275,6 +306,7 @@ export const palestras: Palestra[] = [
     titulo: "Hélice Continua Aplicada à Fundações e Contenções: Execução, Controle e Casos Práticos.",
     descricao: "Soluções modernas em fundações profundas. Aprofunde-se na tecnologia das estacas hélice contínua, compreendendo sua aplicabilidade, vantagens de execução e métodos de controle de qualidade no solo.",
     palestranteId: "p-fabrizio-feitosa",
+    palestrantesExtras: ["p-fabricio-barros"],
     sala: "Sala G0-7",
     inicio: "2026-06-13T14:00:00-03:00",
     fim: "2026-06-13T16:00:00-03:00",
@@ -285,22 +317,41 @@ export const palestras: Palestra[] = [
 ];
 
 export const patrocinadores: Patrocinador[] = [
-  { id: "s1",  nome: "LJ Engenharia",        logo: "", tier: "diamante", principal: true },
-  { id: "s2",  nome: "Inspectum Engenharia", logo: "", tier: "ouro" },
-  { id: "s3",  nome: "JCI Engenharia",       logo: "", tier: "ouro" },
-  { id: "s4",  nome: "Construrappi",         logo: "", tier: "ouro" },
-  { id: "s5",  nome: "Construtora Belvedere", logo: "", tier: "ouro" },
-  { id: "s6",  nome: "CREA",                 logo: "", tier: "ouro" },
-  { id: "s7",  nome: "Copperline",           logo: "", tier: "prata" },
-  { id: "s8",  nome: "MM Locações",          logo: "", tier: "prata" },
-  { id: "s9",  nome: "CREA Jr",              logo: "", tier: "prata" },
-  { id: "s10", nome: "Jovem Engenheiro",     logo: "", tier: "prata" },
-  { id: "s11", nome: "VisionX",              logo: "", tier: "prata" },
+  // Diamante (3)
+  { id: "s1",  nome: "LJ Engenharia",         logo: "", tier: "diamante", principal: true },
+  { id: "s2",  nome: "Kalfix",                logo: "", tier: "diamante" },
+  { id: "s3",  nome: "Jopeli",                logo: "", tier: "diamante" },
+  // Patrocinadores (7) — antigo "ouro"
+  { id: "s4",  nome: "Inspectum Engenharia",  logo: "", tier: "ouro" },
+  { id: "s5",  nome: "Copperline",            logo: "", tier: "ouro" },
+  { id: "s6",  nome: "JCI Engenharia",        logo: "", tier: "ouro" },
+  { id: "s7",  nome: "Construrappi",          logo: "", tier: "ouro" },
+  { id: "s8",  nome: "MM Locações",           logo: "", tier: "ouro" },
+  { id: "s9",  nome: "Construtora Belvedere", logo: "", tier: "ouro" },
+  { id: "s10", nome: "Obratech",              logo: "", tier: "ouro" },
+  // Parceiros (7) — antigo "prata"
+  { id: "s11", nome: "Jovem Engenheiro",      logo: "", tier: "prata" },
+  { id: "s12", nome: "CREA Jr",               logo: "", tier: "prata" },
+  { id: "s13", nome: "CREA",                  logo: "", tier: "prata" },
+  { id: "s14", nome: "VisionX",               logo: "", tier: "prata" },
+  { id: "s15", nome: "São José",              logo: "", tier: "prata" },
+  { id: "s16", nome: "David Brandão",         logo: "", tier: "prata" },
+  { id: "s17", nome: "Expanserv",             logo: "", tier: "prata" },
 ];
 
 export function getPalestrante(id: string | null) {
   if (!id) return undefined;
   return palestrantes.find((p) => p.id === id);
+}
+
+/** Retorna todos os palestrantes de uma palestra (principal + extras). */
+export function getPalestrantesDePalestra(palestra: Palestra): Palestrante[] {
+  const ids = [palestra.palestranteId, ...(palestra.palestrantesExtras ?? [])].filter(
+    (x): x is string => Boolean(x),
+  );
+  return ids
+    .map((id) => palestrantes.find((p) => p.id === id))
+    .filter((p): p is Palestrante => Boolean(p));
 }
 
 export function getPalestraBySlug(slug: string) {

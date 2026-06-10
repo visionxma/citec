@@ -1,4 +1,4 @@
-import { palestras, getPalestrante, EVENTO } from "@/lib/data";
+import { palestras, getPalestrantesDePalestra, EVENTO } from "@/lib/data";
 import { formatDate, formatTime } from "@/lib/format";
 import Link from "next/link";
 import Image from "next/image";
@@ -67,7 +67,8 @@ export default function Programacao() {
                 {byDay[day]
                   .sort((a, b) => a.inicio.localeCompare(b.inicio))
                   .map((p) => {
-                    const sp = getPalestrante(p.palestranteId);
+                    const sps = getPalestrantesDePalestra(p);
+                    const sp = sps[0];
                     const meta = TIPO_META[p.tipo];
                     const TipoIcon = meta.icon;
                     const isPassivo = p.tipo === "intervalo";
@@ -111,11 +112,13 @@ export default function Programacao() {
                               </span>
                             </div>
                             <h3 className="font-display text-base sm:text-xl leading-tight">{p.titulo}</h3>
-                            {sp ? (
+                            {sps.length > 1 ? (
+                              <p className="text-[11px] sm:text-xs text-white/60 mt-0.5">
+                                {sps.map((s) => s.nome).join(" · ")}
+                              </p>
+                            ) : sp ? (
                               <p className="text-[11px] sm:text-xs text-white/60 mt-0.5 truncate">{sp.nome} · <span className="text-white/40">{sp.cargo}</span></p>
-                            ) : (
-                              p.tipo === "mesa-redonda" && <p className="text-[11px] sm:text-xs text-white/60 mt-0.5">3 convidados</p>
-                            )}
+                            ) : null}
                             <p className="text-[10px] sm:text-xs text-white/40 mt-1 sm:hidden inline-flex items-center gap-1">
                               <MapPin size={10} /> {p.sala}
                             </p>

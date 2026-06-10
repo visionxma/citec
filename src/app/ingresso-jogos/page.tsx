@@ -3,22 +3,19 @@
 import { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import { motion, AnimatePresence } from "framer-motion";
-import { getPatrocinadorPrincipal } from "@/lib/data";
+import { EVENTO } from "@/lib/data";
 import { Instagram, CheckCircle2, ArrowRight } from "lucide-react";
 
 type Step = "intro" | "instagram" | "form" | "ingresso";
 
 export default function IngressoJogos() {
-  const sponsor = getPatrocinadorPrincipal();
   const [step, setStep] = useState<Step>("intro");
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [token, setToken] = useState("");
 
   function abrirInstagram() {
-    if (sponsor.instagram) {
-      window.open(`https://instagram.com/${sponsor.instagram}`, "_blank");
-    }
+    window.open(`https://instagram.com/${EVENTO.instagramOficial}`, "_blank");
     setStep("form");
   }
 
@@ -50,7 +47,7 @@ export default function IngressoJogos() {
                 <h2 className="font-display text-2xl sm:text-3xl">Como funciona</h2>
                 <ol className="mt-5 sm:mt-6 space-y-3 sm:space-y-4 text-sm sm:text-base text-white/80">
                   {[
-                    "Siga nosso patrocinador principal no Instagram.",
+                    "Siga nosso perfil oficial no Instagram.",
                     "Preencha seu nome e e-mail.",
                     "Apresente o QR code na entrada da sala de jogos.",
                   ].map((t, i) => (
@@ -73,21 +70,19 @@ export default function IngressoJogos() {
 
             {step === "instagram" && (
               <motion.div key="ig" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="text-center">
-                <h2 className="font-display text-2xl sm:text-3xl break-all px-2">
-                  {sponsor.instagram ? `Siga @${sponsor.instagram}` : `Siga ${sponsor.nome}`}
+                <h2 className="font-display text-2xl sm:text-3xl px-2">
+                  Siga {EVENTO.nomeOficial}
                 </h2>
                 <p className="text-sm sm:text-base text-white/70 mt-3 leading-relaxed">
-                  <span className="font-semibold text-white">{sponsor.nome}</span> é nosso patrocinador principal e torna o CITEC possível.
+                  Instagram oficial do curso de Engenharia Civil que organiza o CITEC.
                 </p>
                 <button
                   onClick={abrirInstagram}
                   className="mt-6 sm:mt-8 w-full bg-gradient-to-r from-pink-light via-pink to-accent text-white font-semibold py-3.5 sm:py-4 rounded-2xl inline-flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform"
                 >
-                  <Instagram size={18} /> {sponsor.instagram ? "Abrir Instagram" : "Continuar"}
+                  <Instagram size={18} /> Abrir @{EVENTO.instagramOficial}
                 </button>
-                <p className="text-xs text-white/40 mt-4">
-                  {sponsor.instagram ? "Após seguir, volte aqui para continuar." : "Em breve o Instagram do patrocinador."}
-                </p>
+                <p className="text-xs text-white/40 mt-4">Após seguir, volte aqui para continuar.</p>
               </motion.div>
             )}
 

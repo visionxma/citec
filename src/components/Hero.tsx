@@ -3,14 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { EVENTO } from "@/lib/data";
-import { Countdown } from "./Countdown";
-import { DimensionLine } from "./DimensionLine";
 import { TitleBlock } from "./TitleBlock";
 import { Ruler } from "./Ruler";
 import { ArrowUpRight } from "lucide-react";
 
-const TAGS = ["Inovação", "Tecnologia", "Construção Civil", "Engenharia", "Afya Uninovafapi", "CREA-PI", "Teresina"];
+const TAGS = ["Inovação", "Tecnologia", "Construção Civil", "Engenharia", "Afya Uninovafapi", "CITEC 26", "Teresina"];
 
 export function Hero() {
   return (
@@ -54,41 +51,34 @@ export function Hero() {
           />
         </motion.div>
 
-        {/* Bottom content grid */}
+        {/* Bottom content (countdown removido — alunos so terao acesso apos o inicio) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-6 sm:mt-8 grid gap-6 lg:grid-cols-[1fr_auto] items-end"
+          className="mt-6 sm:mt-8 max-w-2xl"
         >
-          <div className="max-w-xl">
-            <p className="font-serif italic text-lg sm:text-xl text-white/80 mb-4 sm:mb-6">
-              Da sala de aula ao mercado de trabalho.
-            </p>
-            <p className="text-white/70 text-base sm:text-lg leading-relaxed">
-              Em junho a engenharia civil do Piauí se reúne em Teresina. Três dias de palestras, mesas redondas e minicursos no Auditório Afya Uninovafapi, com apoio do CREA-PI.
-            </p>
-            <div className="mt-5 flex flex-col sm:flex-row sm:flex-wrap gap-3">
-              <Link
-                href="/programacao"
-                className="group relative bg-white text-ink font-semibold px-6 py-3 sm:px-7 sm:py-3.5 rounded-full inline-flex items-center justify-center gap-2 hover:bg-pink hover:text-white transition-colors duration-300"
-              >
-                Ver a programação
-                <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform duration-300" />
-              </Link>
-              <Link
-                href="/ingresso-jogos"
-                className="group glass rounded-full px-6 py-3 sm:px-7 sm:py-3.5 inline-flex items-center justify-center gap-2 font-semibold hover:bg-pink/20 hover:border-pink transition-colors duration-300"
-              >
-                Ingresso da sala de jogos
-                <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform duration-300" />
-              </Link>
-            </div>
-          </div>
-
-          <div className="min-w-[260px] sm:min-w-[340px]">
-            <DimensionLine label="Início em" variant="pink" className="mb-2 sm:mb-3" />
-            <Countdown target={EVENTO.dataInicio} />
+          <p className="font-serif italic text-lg sm:text-xl text-white/80 mb-4 sm:mb-6">
+            Bem-vindo ao CITEC 26!
+          </p>
+          <p className="text-white/70 text-base sm:text-lg leading-relaxed">
+            Este é o seu espaço de acompanhamento durante o evento. Por aqui, você poderá acessar a programação completa, baixar materiais disponibilizados e acompanhar as principais informações do congresso. Use esta página como seu guia digital durante os três dias de evento no Auditório Afya Uninovafapi.
+          </p>
+          <div className="mt-5 flex flex-col sm:flex-row sm:flex-wrap gap-3">
+            <Link
+              href="/programacao"
+              className="group relative bg-white text-ink font-semibold px-6 py-3 sm:px-7 sm:py-3.5 rounded-full inline-flex items-center justify-center gap-2 hover:bg-pink hover:text-white transition-colors duration-300"
+            >
+              Ver a programação
+              <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform duration-300" />
+            </Link>
+            <Link
+              href="/ingresso-jogos"
+              className="group glass rounded-full px-6 py-3 sm:px-7 sm:py-3.5 inline-flex items-center justify-center gap-2 font-semibold hover:bg-pink/20 hover:border-pink transition-colors duration-300"
+            >
+              Ingresso da sala de jogos
+              <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform duration-300" />
+            </Link>
           </div>
         </motion.div>
 
@@ -102,7 +92,7 @@ export function Hero() {
           <Ruler startLabel="QUI 11.06" endLabel="SÁB 13.06" className="mb-4 max-w-2xl" />
           <TitleBlock
             cells={[
-              { label: "Edição", value: "04" },
+              { label: "Edição", value: "2026" },
               { label: "Local", value: "Auditório Afya · Teresina" },
               { label: "Período", value: "11–13 · 06 · 2026" },
               { label: "Apoio", value: "CREA-PI" },

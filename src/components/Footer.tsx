@@ -1,7 +1,14 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { EVENTO } from "@/lib/data";
-import { Instagram, Linkedin, Youtube, ArrowUpRight } from "lucide-react";
+import { Instagram, Globe, ArrowUpRight } from "lucide-react";
+
+const SOCIAL = [
+  { Icon: Instagram, href: "https://instagram.com/eng.uninovafapi", label: "Instagram @eng.uninovafapi" },
+  { Icon: Globe, href: "https://teresina.afya.com.br/graduacao/engenharia-civil", label: "Site Afya Eng. Civil" },
+];
+
+const EMAILS = ["renan.gomes@afya.com.br", "alisson.dias@afya.com.br"];
 
 export function Footer() {
   return (
@@ -17,10 +24,14 @@ export function Footer() {
               {EVENTO.subtitulo}. {EVENTO.local}.
             </p>
             <div className="flex gap-2 mt-4">
-              {[Instagram, Linkedin, Youtube].map((Icon, i) => (
+              {SOCIAL.map(({ Icon, href, label }) => (
                 <a
-                  key={i}
-                  href="#"
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  title={label}
                   className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center hover:bg-pink hover:border-pink transition-colors"
                 >
                   <Icon size={16} />
@@ -52,7 +63,7 @@ export function Footer() {
           <div>
             <h4 className="text-xs uppercase tracking-[0.2em] text-white/40 mb-3">Evento</h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li>10 — 13 Jun 2026</li>
+              <li>11 a 13 Jun 2026</li>
               <li>{EVENTO.local}</li>
               <li className="font-serif italic text-white/50">“{EVENTO.tema}”</li>
             </ul>
@@ -60,12 +71,17 @@ export function Footer() {
 
           <div>
             <h4 className="text-xs uppercase tracking-[0.2em] text-white/40 mb-3">Contato</h4>
-            <ul className="space-y-2 text-sm text-white/70">
-              <li><a href="mailto:contato@citec.com.br" className="hover:text-pink-light">contato@citec.com.br</a></li>
-              <li><a href="mailto:imprensa@citec.com.br" className="hover:text-pink-light">imprensa@citec.com.br</a></li>
-              <li><a href="mailto:patrocinio@citec.com.br" className="hover:text-pink-light">patrocinio@citec.com.br</a></li>
+            <ul className="space-y-2 text-sm">
+              {EMAILS.map((email) => (
+                <li key={email}>
+                  <a href={`mailto:${email}`} className="text-white/70 hover:text-pink-light transition-colors break-all">
+                    {email}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
+
         </div>
 
         <div className="mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 relative">
