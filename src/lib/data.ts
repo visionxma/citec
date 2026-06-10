@@ -320,19 +320,19 @@ export const palestras: Palestra[] = [
 export const patrocinadores: Patrocinador[] = [
   // Diamante (3)
   { id: "s1",  nome: "LJ Engenharia",         logo: "/logos/sponsors/lj-engenharia.png", tier: "diamante", principal: true },
-  { id: "s2",  nome: "Kalfix",                logo: "",                                  tier: "diamante" },
+  { id: "s2",  nome: "Kalfix",                logo: "/logos/sponsors/kalfix.png",        tier: "diamante" },
   { id: "s3",  nome: "Jopeli",                logo: "",                                  tier: "diamante" },
   // Patrocinadores (7) — antigo "ouro"
   { id: "s4",  nome: "Inspectum Engenharia",  logo: "/logos/sponsors/inspectum.png",     tier: "ouro" },
   { id: "s5",  nome: "Copperline",            logo: "/logos/sponsors/copperline.png",    tier: "ouro" },
   { id: "s6",  nome: "JCI Engenharia",        logo: "/logos/sponsors/jci.png",           tier: "ouro" },
   { id: "s7",  nome: "Construrappi",          logo: "/logos/sponsors/construrappi.png",  tier: "ouro" },
-  { id: "s8",  nome: "MM Locações",           logo: "",                                  tier: "ouro" },
-  { id: "s9",  nome: "Construtora Belvedere", logo: "",                                  tier: "ouro" },
+  { id: "s8",  nome: "MM Locações",           logo: "/logos/sponsors/mm-locacoes.png",   tier: "ouro" },
+  { id: "s9",  nome: "Construtora Belvedere", logo: "/logos/sponsors/belvedere.png",     tier: "ouro" },
   { id: "s10", nome: "Obratech",              logo: "",                                  tier: "ouro" },
   // Parceiros (7) — antigo "prata"
   { id: "s11", nome: "Jovem Engenheiro",      logo: "/logos/sponsors/jovem-engenheiro.png", tier: "prata" },
-  { id: "s12", nome: "CREA Jr",               logo: "",                                  tier: "prata" },
+  { id: "s12", nome: "CREA Jr",               logo: "/logos/sponsors/crea-jr.png",       tier: "prata" },
   { id: "s13", nome: "CREA",                  logo: "/logos/sponsors/crea.png",          tier: "prata" },
   { id: "s14", nome: "VisionX",               logo: "/logos/sponsors/visionx.png",       tier: "prata" },
   { id: "s15", nome: "São José",              logo: "/logos/sponsors/sao-jose.png",      tier: "prata" },
