@@ -4,8 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
-// TODO: trocar pelo link real do grupo de WhatsApp dos participantes.
-const WHATSAPP_GROUP_URL = "#";
+const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/ITmw1bM6GnJDdWlMe69FVn?s=cl&p=a&mlu=3&amv=1";
 
 const items = [
   {

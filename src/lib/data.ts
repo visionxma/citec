@@ -35,6 +35,7 @@ export const palestrantes: Palestrante[] = [
   { id: "p-jose-hamilton", nome: "José Hamilton", cargo: "SDU Centro", bio: "Arquiteto e Urbanista, Doutor em Desenvolvimento e Meio Ambiente pela Universidade Federal do Piauí (UFPI) e Mestre em Arquitetura e Urbanismo pela Universidade Federal de Santa Catarina (UFSC). Atualmente, é professor no Centro Universitário Uninovafapi e integra o corpo técnico da Prefeitura Municipal de Teresina, atuando na SDU Centro. Sua atuação como pesquisador é focada na área de habitação social e assentamentos precários. Anteriormente, foi docente no curso de Arquitetura e Urbanismo da UFPI (2017-2019).", foto: "/speakers/200036.jpg" },
   { id: "p-patricia-nogueira", nome: "Patrícia Nogueira", cargo: "Afya Teresina", bio: "Mestra em Educação (UNICAMP) e graduada em Processamento de Dados, com diversas especializações nas áreas de Tecnologia, Educação e Gestão. Atualmente, integra a Diretoria de Tecnologia e Inteligência de Dados da SEGOV e atua como docente na Estácio Teresina, UNINOVAFAPI e Escola do Legislativo (ALEPI). Possui ampla experiência na coordenação e gestão do ensino superior, atuando como pesquisadora e orientadora com ênfase em Ciência da Computação, Educação a Distância (EaD) e Tecnologia.", foto: "/speakers/200072.jpg" },
   { id: "p-matheus-barbosa", nome: "Matheus Barbosa", cargo: "Topofly Engenharia", bio: "Engenheiro Agrimensor e Cartógrafo, especialista em Mapeamento Aéreo com Drones e CEO da Topofly Engenharia. Com olhar voltado para o futuro das geotecnologias, é pós-graduando em Inteligência Artificial com ênfase em negócios e inovação. Atualmente, também atua como Vice-presidente da Associação Piauiense dos Engenheiros Agrimensores e Cartógrafos, trabalhando pelo fortalecimento e representatividade do setor.", foto: "/speakers/200094.jpg" },
+  { id: "p-jose-bringel-filho", nome: "José de Ribamar Martins Bringel Filho", cargo: "Anjos do Brasil · ex-Piauí Original Hub", bio: "Ex-líder de comunidade InovAtiva, ex-embaixador do Conecta Startup Brasil e investidor da Anjos do Brasil. Coordenou o Espaço THEch da Secretaria Municipal de Desenvolvimento Econômico e Turismo de Teresina (SEMDEC) até 2024. Ajudou a construir as primeiras políticas públicas de fomento a startups nos Estados do Piauí (Lagoas Digitais 2014–2015, Programa THEch 2018) e Maranhão (Inova Timon 2013–2015). Por meio da sua atuação na SEMDEC, ajudou a consolidar a estrutura legal do município (SANDBOX regulatório aprovado em 2023 e lei de inovação em tramitação), buscando melhorar as condições para acolher e atrair iniciativas inovadoras para Teresina. Coordenou o Piauí Original Hub (2020–2024), um dos principais hubs de inovação do Estado do Piauí (Shopping Rio Poty, Teresina).", foto: "/speakers/jose-bringel.jpg" },
 ];
 
 export const palestras: Palestra[] = [
@@ -66,10 +67,10 @@ export const palestras: Palestra[] = [
   },
   {
     id: "t422738",
-    slug: "palestra-magna",
-    titulo: "Palestra Magna",
+    slug: "engenheiro-do-futuro-inovacao-e-tecnologia",
+    titulo: "Engenheiro do Futuro: Inovação e Tecnologia",
     descricao: "Prepare-se para uma imersão no futuro da nossa profissão! Nesta palestra de destaque, vamos explorar como as inovações tecnológicas estão revolucionando o mercado e transformando a prática da engenharia. Uma oportunidade imperdível para expandir sua visão e descobrir as ferramentas que vão moldar os próximos passos da sua carreira.",
-    palestranteId: null,
+    palestranteId: "p-jose-bringel-filho",
     sala: "Auditório Afya",
     inicio: "2026-06-11T19:00:00-03:00",
     fim: "2026-06-11T20:00:00-03:00",
