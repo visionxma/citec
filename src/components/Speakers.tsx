@@ -1,70 +1,51 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { palestrantes } from "@/lib/data";
-import { Instagram, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { DimensionLine } from "./DimensionLine";
 
 export function Speakers() {
   return (
-    <section className="relative max-w-7xl mx-auto px-4 py-24">
-      <div className="flex items-end justify-between mb-12 flex-wrap gap-6">
-        <div>
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-pink-light">02 · Palestrantes</span>
-            <div className="w-12 h-px bg-pink-light" />
-          </div>
-          <h2 className="font-display text-5xl md:text-7xl leading-[0.95]">
-            Mentes que <br />
-            <span className="font-serif italic text-white/50 text-4xl md:text-6xl">moldam o futuro</span>
-          </h2>
-        </div>
-        <a href="/programacao" className="group inline-flex items-center gap-2 text-sm text-white/70 hover:text-pink-light">
-          Ver todos
+    <section className="relative max-w-7xl mx-auto px-4 py-8 sm:py-12">
+      <DimensionLine label={`${palestrantes.length} convidados`} className="mb-6 sm:mb-8" />
+
+      <div className="flex items-end justify-between gap-3 mb-5 sm:mb-6 flex-wrap">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl leading-none">Quem fala no CITEC</h2>
+        <Link href="/programacao" className="group inline-flex items-center gap-2 text-xs sm:text-sm text-white/70 hover:text-pink-light">
+          Ver na programação
           <ArrowUpRight size={14} className="group-hover:rotate-45 transition-transform" />
-        </a>
+        </Link>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
         {palestrantes.map((p, i) => (
           <motion.article
             key={p.id}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: i * 0.08 }}
-            className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-ink-soft"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, delay: Math.min(i * 0.04, 0.4) }}
+            className="group relative aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 bg-ink-soft"
           >
             <Image
               src={p.foto}
               alt={p.nome}
               fill
-              sizes="(max-width: 768px) 100vw, 33vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-pink/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
 
-            <div className="absolute inset-x-0 bottom-0 p-6">
-              <p className="text-[10px] uppercase tracking-[0.25em] text-pink-light mb-2">{p.cargo}</p>
-              <h3 className="font-display text-2xl md:text-3xl leading-tight">{p.nome}</h3>
-              <p className="text-sm text-white/60 mt-2 line-clamp-2 max-h-0 group-hover:max-h-20 overflow-hidden transition-all duration-500">
-                {p.bio}
-              </p>
-              {p.instagram && (
-                <a
-                  href={`https://instagram.com/${p.instagram}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-white/60 hover:text-pink-light mt-3"
-                >
-                  <Instagram size={12} /> @{p.instagram}
-                </a>
-              )}
-            </div>
+            <span className="absolute top-3 left-3 font-mono text-[10px] text-white/50">
+              {String(i + 1).padStart(2, "0")}
+            </span>
 
-            <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-              <ArrowUpRight size={14} />
+            <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
+              <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-pink-light mb-1 truncate">{p.cargo}</p>
+              <h3 className="font-display text-sm sm:text-base md:text-lg leading-tight">{p.nome}</h3>
             </div>
           </motion.article>
         ))}
