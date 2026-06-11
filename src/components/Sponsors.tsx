@@ -91,9 +91,11 @@ export function Sponsors() {
                 <div className="absolute inset-0 flex items-center justify-center p-6 sm:p-8">
                   <SponsorMark s={s} size="lg" />
                 </div>
-                <div className="absolute top-2.5 left-3 text-[9px] sm:text-[10px] uppercase tracking-widest text-pink-light">
-                  ✦ Principal
-                </div>
+                {s.principal && (
+                  <div className="absolute top-2.5 left-3 text-[9px] sm:text-[10px] uppercase tracking-widest text-pink-light">
+                    ✦ Principal
+                  </div>
+                )}
               </SponsorTile>
             ))}
           </div>
