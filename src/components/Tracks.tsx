@@ -18,7 +18,7 @@ const PROGRAM = [
     day: "12",
     weekday: "Sexta",
     label: "Palestras & Mesas Redondas",
-    time: "14h às 17h30",
+    time: "14h às 17h40",
     items: [
       "Mesa: Viabilidade de Empreendimentos",
       "Aprovação e Licenciamentos na Prefeitura",
@@ -32,7 +32,7 @@ const PROGRAM = [
     weekday: "Sábado",
     label: "Minicursos",
     time: "12 minicursos paralelos",
-    items: ["08h — 12h · 5 turmas matutinas", "14h — 16h · 7 turmas vespertinas"],
+    items: ["08h30 — 12h · 5 turmas matutinas", "14h — 16h · 7 turmas vespertinas"],
     accent: "from-accent to-pink-light",
   },
 ];
