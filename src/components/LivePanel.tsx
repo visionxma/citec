@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { MapPin, Clock, ArrowUpRight, Radio } from "lucide-react";
 
 export function LivePanel() {
-  const liveId = useLiveTalk();
+  const { id: liveId, loading } = useLiveTalk();
   const [now, setNow] = useState(Date.now());
 
   useEffect(() => {
@@ -30,6 +30,15 @@ export function LivePanel() {
         <div className="flex-1 divider-gradient" />
       </div>
 
+      {loading ? (
+        // Placeholder neutro enquanto a fonte de dados não respondeu.
+        // Evita o flash do "EM BREVE" antes do Firebase carregar.
+        <div className="relative glass rounded-2xl sm:rounded-3xl p-5 sm:p-8 overflow-hidden h-[180px] sm:h-[220px] animate-pulse">
+          <div className="h-2.5 w-32 rounded-full bg-white/10" />
+          <div className="h-8 sm:h-12 w-48 sm:w-64 rounded-lg bg-white/10 mt-4" />
+          <div className="h-3 w-3/4 max-w-md rounded-full bg-white/5 mt-4" />
+        </div>
+      ) : (
       <AnimatePresence mode="wait">
         {!live ? (
           <motion.div
@@ -67,6 +76,7 @@ export function LivePanel() {
           <LiveCard key={live.id} live={live} now={now} />
         )}
       </AnimatePresence>
+      )}
     </section>
   );
 }

@@ -34,8 +34,14 @@ export function setLiveTalk(id: string | null) {
 }
 
 /** Hook reativo: retorna o id da palestra ao vivo (ou null). */
+/**
+ * Estado do "ao vivo".
+ * `loading` é true até a primeira resposta da fonte de dados — evita o flash
+ * do estado offline ("EM BREVE") antes do Firebase responder.
+ */
 export function useLiveTalk() {
   const [id, setId] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const db = getDb();
@@ -44,12 +50,14 @@ export function useLiveTalk() {
       const unsub = onValue(ref(db, PATH), (snap) => {
         const val = snap.val();
         setId(typeof val === "string" && val ? val : null);
+        setLoading(false);
       });
       return () => unsub();
     }
 
     // Fallback local (sincroniza apenas entre abas do mesmo navegador).
     setId(getLocal());
+    setLoading(false);
     const onChange = (e: Event) => setId((e as CustomEvent).detail ?? null);
     const onStorage = (e: StorageEvent) => {
       if (e.key === KEY) setId(e.newValue);
@@ -62,7 +70,7 @@ export function useLiveTalk() {
     };
   }, []);
 
-  return id;
+  return { id, loading };
 }
 
 export { firebaseEnabled };

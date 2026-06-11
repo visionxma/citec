@@ -16,7 +16,7 @@ export default function Admin() {
 }
 
 function AdminPanel() {
-  const liveId = useLiveTalk();
+  const { id: liveId } = useLiveTalk();
 
   return (
     <div className="relative pt-20 sm:pt-24 pb-10">
