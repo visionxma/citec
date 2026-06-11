@@ -1,15 +1,20 @@
 "use client";
 
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
-import { Lock, Loader2 } from "lucide-react";
+import { Lock } from "lucide-react";
 
 const SESSION_KEY = "citec:admin-ok";
+
+// Site é estático (output: export) — não há servidor para validar a senha.
+// A checagem é feita no cliente contra NEXT_PUBLIC_ADMIN_PASSWORD.
+// Isso barra acesso casual; não é segurança forte (a senha fica no bundle).
+// Para proteção real, usar Cloudflare Access na frente da rota /admin.
+const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
 
 export function AdminGate({ children }: { children: ReactNode }) {
   const [authed, setAuthed] = useState(false);
   const [ready, setReady] = useState(false);
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -17,27 +22,18 @@ export function AdminGate({ children }: { children: ReactNode }) {
     setReady(true);
   }, []);
 
-  async function onSubmit(e: FormEvent) {
+  function onSubmit(e: FormEvent) {
     e.preventDefault();
-    setLoading(true);
     setError(null);
-    try {
-      const res = await fetch("/api/admin-auth", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password }),
-      });
-      const data = await res.json();
-      if (res.ok && data.ok) {
-        sessionStorage.setItem(SESSION_KEY, "1");
-        setAuthed(true);
-      } else {
-        setError(data.error ?? "Não foi possível entrar.");
-      }
-    } catch {
-      setError("Erro de conexão. Tente novamente.");
-    } finally {
-      setLoading(false);
+    if (!ADMIN_PASSWORD) {
+      setError("Senha não configurada (NEXT_PUBLIC_ADMIN_PASSWORD).");
+      return;
+    }
+    if (password === ADMIN_PASSWORD) {
+      sessionStorage.setItem(SESSION_KEY, "1");
+      setAuthed(true);
+    } else {
+      setError("Senha incorreta.");
     }
   }
 
@@ -78,10 +74,10 @@ export function AdminGate({ children }: { children: ReactNode }) {
 
         <button
           type="submit"
-          disabled={loading || !password}
+          disabled={!password}
           className="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full bg-white text-ink px-5 py-3 text-sm font-medium transition-opacity disabled:opacity-40"
         >
-          {loading ? <Loader2 size={14} className="animate-spin" /> : <Lock size={14} />}
+          <Lock size={14} />
           Entrar
         </button>
       </form>
