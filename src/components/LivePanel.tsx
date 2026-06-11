@@ -71,8 +71,17 @@ export function LivePanel() {
   );
 }
 
+// Imagem de fallback por trilha, usada quando a sessão não tem palestrante
+// (credenciamento, abertura, coffee break, etc.).
+const TRILHA_IMG: Record<string, string> = {
+  "Construção": "/images/eng-obra.jpg",
+  "Tecnologia": "/images/eng-projeto.jpg",
+  "Inovação": "/images/eng-arquitetura.jpg",
+};
+
 function LiveCard({ live, now }: { live: (typeof palestras)[number]; now: number }) {
   const sp = getPalestrante(live.palestranteId);
+  const imgSrc = sp?.foto ?? TRILHA_IMG[live.trilha] ?? "/images/eng-hero.jpg";
   const start = new Date(live.inicio).getTime();
   const end = new Date(live.fim).getTime();
   const progress = Math.min(100, Math.max(0, ((now - start) / (end - start)) * 100));
@@ -89,18 +98,16 @@ function LiveCard({ live, now }: { live: (typeof palestras)[number]; now: number
       <div className="absolute inset-0 bg-hatch opacity-60" />
 
       <div className="relative grid md:grid-cols-[260px_1fr] gap-0">
-        {sp && (
-          <div className="relative h-48 sm:h-64 md:h-auto overflow-hidden">
-            <Image
-              src={sp.foto}
-              alt={sp.nome}
-              fill
-              className="object-cover"
-              sizes="260px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-ink via-ink/40 to-transparent" />
-          </div>
-        )}
+        <div className="relative h-48 sm:h-64 md:h-auto overflow-hidden">
+          <Image
+            src={imgSrc}
+            alt={sp?.nome ?? live.titulo}
+            fill
+            className="object-cover"
+            sizes="260px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-ink via-ink/40 to-transparent" />
+        </div>
 
         <div className="p-5 sm:p-6 md:p-8 flex flex-col justify-between gap-4 sm:gap-5">
           <div>
