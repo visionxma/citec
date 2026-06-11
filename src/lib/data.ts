@@ -319,25 +319,25 @@ export const palestras: Palestra[] = [
 
 export const patrocinadores: Patrocinador[] = [
   // Diamante (3)
-  { id: "s1",  nome: "LJ Engenharia",         logo: "/logos/sponsors/lj-engenharia.png", tier: "diamante", principal: true },
-  { id: "s2",  nome: "Kalfix",                logo: "/logos/sponsors/kalfix.png",        tier: "diamante" },
+  { id: "s1",  nome: "LJ Engenharia",         logo: "/logos/sponsors/lj-engenharia.png", tier: "diamante", principal: true, instagram: "ljengenhariaoficial" },
+  { id: "s2",  nome: "Kalfix",                logo: "/logos/sponsors/kalfix.png",        tier: "diamante", instagram: "kalfix" },
   { id: "s3",  nome: "Jopeli",                logo: "/logos/sponsors/jopeli.png",        tier: "diamante" },
   // Patrocinadores (7) — antigo "ouro"
-  { id: "s4",  nome: "Inspectum Engenharia",  logo: "/logos/sponsors/inspectum.png",     tier: "ouro" },
-  { id: "s5",  nome: "Copperline",            logo: "/logos/sponsors/copperline.png",    tier: "ouro" },
-  { id: "s6",  nome: "JCI Engenharia",        logo: "/logos/sponsors/jci.png",           tier: "ouro" },
-  { id: "s7",  nome: "Construrappi",          logo: "/logos/sponsors/construrappi.png",  tier: "ouro" },
-  { id: "s8",  nome: "MM Locações",           logo: "/logos/sponsors/mm-locacoes.png",   tier: "ouro" },
-  { id: "s9",  nome: "Construtora Belvedere", logo: "/logos/sponsors/belvedere.png",     tier: "ouro" },
-  { id: "s10", nome: "Obratech",              logo: "/logos/sponsors/obratech.png",      tier: "ouro" },
+  { id: "s4",  nome: "Inspectum Engenharia",  logo: "/logos/sponsors/inspectum.png",     tier: "ouro", instagram: "inspectum.eng" },
+  { id: "s5",  nome: "Copperline",            logo: "/logos/sponsors/copperline.png",    tier: "ouro", instagram: "copperlinefiosecabos" },
+  { id: "s6",  nome: "JCI Engenharia",        logo: "/logos/sponsors/jci.png",           tier: "ouro", instagram: "jciengenharia" },
+  { id: "s7",  nome: "Construrappi",          logo: "/logos/sponsors/construrappi.png",  tier: "ouro", instagram: "constru.rapi" },
+  { id: "s8",  nome: "MM Locações",           logo: "/logos/sponsors/mm-locacoes.png",   tier: "ouro", instagram: "mmlocacoes" },
+  { id: "s9",  nome: "Construtora Belvedere", logo: "/logos/sponsors/belvedere.png",     tier: "ouro", instagram: "belvedere.construtora" },
+  { id: "s10", nome: "Obratech",              logo: "/logos/sponsors/obratech.png",      tier: "ouro", instagram: "obratech" },
   // Parceiros (7) — antigo "prata"
   { id: "s11", nome: "Jovem Engenheiro",      logo: "/logos/sponsors/jovem-engenheiro.png", tier: "prata" },
-  { id: "s12", nome: "CREA Jr",               logo: "/logos/sponsors/crea-jr.png",       tier: "prata" },
-  { id: "s13", nome: "CREA",                  logo: "/logos/sponsors/crea.png",          tier: "prata" },
-  { id: "s14", nome: "VisionX",               logo: "/logos/sponsors/visionx.png",       tier: "prata" },
-  { id: "s15", nome: "São José",              logo: "/logos/sponsors/sao-jose.png",      tier: "prata" },
-  { id: "s16", nome: "David Brandão",         logo: "/logos/sponsors/david-brandao.png", tier: "prata" },
-  { id: "s17", nome: "Expanserv",             logo: "/logos/sponsors/expanserv.png",     tier: "prata" },
+  { id: "s12", nome: "CREA Jr",               logo: "/logos/sponsors/crea-jr.png",       tier: "prata", instagram: "creajr_pi" },
+  { id: "s13", nome: "CREA",                  logo: "/logos/sponsors/crea.png",          tier: "prata", instagram: "creapiaui" },
+  { id: "s14", nome: "VisionX",               logo: "/logos/sponsors/visionx.png",       tier: "prata", instagram: "visionx.dev" },
+  { id: "s15", nome: "São José",              logo: "/logos/sponsors/sao-jose.png",      tier: "prata", instagram: "iesaojose" },
+  { id: "s16", nome: "David Brandão",         logo: "/logos/sponsors/david-brandao.png", tier: "prata", instagram: "davidnunes" },
+  { id: "s17", nome: "Expanserv",             logo: "/logos/sponsors/expanserv.png",     tier: "prata", instagram: "expanserv_teresina" },
 ];
 
 export function getPalestrante(id: string | null) {

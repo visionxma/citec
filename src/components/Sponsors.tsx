@@ -1,11 +1,41 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type MotionProps } from "framer-motion";
 import { patrocinadores } from "@/lib/data";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { X, Instagram, Globe } from "lucide-react";
 import { DimensionLine } from "./DimensionLine";
 import type { Patrocinador } from "@/lib/types";
+
+// Tile clicável do patrocinador: abre o Instagram direto quando há @,
+// senão cai no modal de detalhes (fallback para quem ainda não tem perfil).
+function SponsorTile({
+  s,
+  onOpen,
+  className,
+  children,
+  ...motionProps
+}: { s: Patrocinador; onOpen: (s: Patrocinador) => void; className: string; children: ReactNode } & MotionProps) {
+  if (s.instagram) {
+    return (
+      <motion.a
+        href={`https://instagram.com/${s.instagram}`}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Instagram de ${s.nome}`}
+        className={className}
+        {...motionProps}
+      >
+        {children}
+      </motion.a>
+    );
+  }
+  return (
+    <motion.button onClick={() => onOpen(s)} className={className} {...motionProps}>
+      {children}
+    </motion.button>
+  );
+}
 
 // Renderiza o logo do patrocinador, ou o nome em tipografia display
 // quando o logo ainda não foi fornecido.
@@ -47,14 +77,15 @@ export function Sponsors() {
           <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2 sm:mb-3">Patrocinador Diamante</p>
           <div className="grid gap-3 md:grid-cols-2">
             {diamante.map((s) => (
-              <motion.button
+              <SponsorTile
                 key={s.id}
+                s={s}
+                onOpen={setOpen}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                onClick={() => setOpen(s)}
-                className="group relative h-28 sm:h-36 rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-ink-soft to-ink hover:border-pink/40 transition-colors duration-500"
+                className="group relative h-28 sm:h-36 rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-ink-soft to-ink hover:border-pink/40 transition-colors duration-500 flex"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-pink/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute inset-0 flex items-center justify-center p-6 sm:p-8">
@@ -63,7 +94,7 @@ export function Sponsors() {
                 <div className="absolute top-2.5 left-3 text-[9px] sm:text-[10px] uppercase tracking-widest text-pink-light">
                   ✦ Principal
                 </div>
-              </motion.button>
+              </SponsorTile>
             ))}
           </div>
         </div>
@@ -76,13 +107,14 @@ export function Sponsors() {
           <div className="overflow-hidden marquee-mask">
             <div className="flex gap-3 animate-marquee w-max">
               {[...ouro, ...ouro, ...ouro, ...ouro].map((s, i) => (
-                <button
+                <SponsorTile
                   key={`${s.id}-${i}`}
-                  onClick={() => setOpen(s)}
+                  s={s}
+                  onOpen={setOpen}
                   className="shrink-0 w-44 sm:w-56 h-20 sm:h-24 rounded-xl sm:rounded-2xl border border-white/10 bg-ink-soft hover:border-pink hover:bg-pink/5 transition flex items-center justify-center p-3 sm:p-4"
                 >
                   <SponsorMark s={s} size="md" />
-                </button>
+                </SponsorTile>
               ))}
             </div>
           </div>
@@ -96,13 +128,14 @@ export function Sponsors() {
           <div className="overflow-hidden marquee-mask">
             <div className="flex gap-3 animate-marquee-reverse w-max">
               {[...prata, ...prata, ...prata, ...prata].map((s, i) => (
-                <button
+                <SponsorTile
                   key={`${s.id}-${i}`}
-                  onClick={() => setOpen(s)}
+                  s={s}
+                  onOpen={setOpen}
                   className="shrink-0 w-44 sm:w-56 h-20 sm:h-24 rounded-xl sm:rounded-2xl border border-white/10 bg-ink-soft hover:border-pink hover:bg-pink/5 transition flex items-center justify-center p-3 sm:p-4"
                 >
                   <SponsorMark s={s} size="md" />
-                </button>
+                </SponsorTile>
               ))}
             </div>
           </div>

@@ -5,8 +5,17 @@ import { useLiveTalk, setLiveTalk } from "@/lib/liveStore";
 import { formatTime, formatDateShort } from "@/lib/format";
 import { Radio, PowerOff } from "lucide-react";
 import { motion } from "framer-motion";
+import { AdminGate } from "@/components/AdminGate";
 
 export default function Admin() {
+  return (
+    <AdminGate>
+      <AdminPanel />
+    </AdminGate>
+  );
+}
+
+function AdminPanel() {
   const liveId = useLiveTalk();
 
   return (
