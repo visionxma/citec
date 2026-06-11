@@ -321,7 +321,7 @@ export const patrocinadores: Patrocinador[] = [
   // Diamante (3)
   { id: "s1",  nome: "LJ Engenharia",         logo: "/logos/sponsors/lj-engenharia.png", tier: "diamante", principal: true },
   { id: "s2",  nome: "Kalfix",                logo: "/logos/sponsors/kalfix.png",        tier: "diamante" },
-  { id: "s3",  nome: "Jopeli",                logo: "",                                  tier: "diamante" },
+  { id: "s3",  nome: "Jopeli",                logo: "/logos/sponsors/jopeli.png",        tier: "diamante" },
   // Patrocinadores (7) — antigo "ouro"
   { id: "s4",  nome: "Inspectum Engenharia",  logo: "/logos/sponsors/inspectum.png",     tier: "ouro" },
   { id: "s5",  nome: "Copperline",            logo: "/logos/sponsors/copperline.png",    tier: "ouro" },
@@ -329,7 +329,7 @@ export const patrocinadores: Patrocinador[] = [
   { id: "s7",  nome: "Construrappi",          logo: "/logos/sponsors/construrappi.png",  tier: "ouro" },
   { id: "s8",  nome: "MM Locações",           logo: "/logos/sponsors/mm-locacoes.png",   tier: "ouro" },
   { id: "s9",  nome: "Construtora Belvedere", logo: "/logos/sponsors/belvedere.png",     tier: "ouro" },
-  { id: "s10", nome: "Obratech",              logo: "",                                  tier: "ouro" },
+  { id: "s10", nome: "Obratech",              logo: "/logos/sponsors/obratech.png",      tier: "ouro" },
   // Parceiros (7) — antigo "prata"
   { id: "s11", nome: "Jovem Engenheiro",      logo: "/logos/sponsors/jovem-engenheiro.png", tier: "prata" },
   { id: "s12", nome: "CREA Jr",               logo: "/logos/sponsors/crea-jr.png",       tier: "prata" },
