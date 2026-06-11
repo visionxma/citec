@@ -49,7 +49,7 @@ export function CTA() {
               href="/ingresso-jogos"
               className="group bg-white/10 backdrop-blur border border-white/30 text-white font-semibold px-6 sm:px-7 py-3 rounded-full inline-flex items-center justify-center gap-2 hover:bg-white hover:text-ink transition-colors"
             >
-              Gerar ingresso
+              Ingresso da Sala de Jogos
               <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform" />
             </Link>
           </div>

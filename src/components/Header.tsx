@@ -80,7 +80,7 @@ export function Header() {
               href="/ingresso-jogos"
               className="hidden md:inline-flex items-center gap-1.5 bg-white text-ink font-semibold text-sm px-4 py-2 rounded-lg hover:bg-pink hover:text-white transition-colors"
             >
-              Garantir ingresso
+              Ingresso · Sala de Jogos
               <ArrowUpRight size={14} />
             </Link>
             <button
@@ -121,7 +121,7 @@ export function Header() {
             href="/ingresso-jogos"
             className="flex items-center justify-center gap-2 m-3 px-5 py-3.5 rounded-xl bg-white text-ink font-semibold text-sm"
           >
-            Garantir ingresso
+            Ingresso · Sala de Jogos
             <ArrowUpRight size={14} />
           </Link>
         </nav>
