@@ -59,7 +59,7 @@ export default function Programacao() {
                 </span>
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.3em] text-pink-light">Dia {dayIdx + 1}</p>
-                  <h2 className="font-display text-base sm:text-xl capitalize mt-0.5">{formatDate(day + "T00:00:00")}</h2>
+                  <h2 className="font-display text-base sm:text-xl capitalize mt-0.5">{formatDate(day + "T00:00:00-03:00")}</h2>
                 </div>
               </div>
 
