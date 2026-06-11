@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 const STATS = [
   { value: 3, suffix: "", label: "Dias de evento" },
   { value: 18, suffix: "", label: "Sessões oficiais" },
-  { value: 21, suffix: "", label: "Palestrantes" },
+  { value: 22, suffix: "", label: "Palestrantes" },
   { value: 12, suffix: "", label: "Minicursos práticos" },
 ];
 
