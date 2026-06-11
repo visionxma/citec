@@ -89,7 +89,19 @@ export default function Programacao() {
                           <div className="font-mono font-bold text-lg sm:text-2xl text-white shrink-0 w-[60px] sm:w-[80px] pt-1 sm:pt-1 tracking-tight">
                             {formatTime(p.inicio)}
                           </div>
-                          {sp ? (
+                          {sps.length > 1 ? (
+                            <div className="flex -space-x-4 sm:-space-x-5 shrink-0">
+                              {sps.map((s, i) => (
+                                <div
+                                  key={s.id}
+                                  className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-ink-soft"
+                                  style={{ zIndex: sps.length - i }}
+                                >
+                                  <Image src={s.foto} alt={s.nome} fill className="object-cover" sizes="48px" />
+                                </div>
+                              ))}
+                            </div>
+                          ) : sp ? (
                             <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-white/10 shrink-0">
                               <Image src={sp.foto} alt={sp.nome} fill className="object-cover" sizes="48px" />
                             </div>
@@ -118,6 +130,8 @@ export default function Programacao() {
                               </p>
                             ) : sp ? (
                               <p className="text-[11px] sm:text-xs text-white/60 mt-0.5 truncate">{sp.nome} · <span className="text-white/40">{sp.cargo}</span></p>
+                            ) : p.palestranteNota ? (
+                              <p className="text-[11px] sm:text-xs text-white/60 mt-0.5">{p.palestranteNota}</p>
                             ) : null}
                             <p className="text-[10px] sm:text-xs text-white/40 mt-1 sm:hidden inline-flex items-center gap-1">
                               <MapPin size={10} /> {p.sala}

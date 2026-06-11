@@ -12,7 +12,7 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 export const metadata: Metadata = {
   title: "CITEC 2026 — Congresso de Inovação, Tecnologia e Construção Civil",
   description:
-    "Da sala de aula ao mercado de trabalho. 10 a 13 de junho de 2026, no Auditório Afya Uninovafapi — Teresina, PI.",
+    "Da sala de aula ao mercado de trabalho. 11 a 13 de junho de 2026, no Auditório Afya Uninovafapi — Teresina, PI.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

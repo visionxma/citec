@@ -30,6 +30,8 @@ export type Palestra = {
   palestranteId: string | null;
   /** IDs dos demais palestrantes (mesas redondas com co-convidados). */
   palestrantesExtras?: string[];
+  /** Texto exibido no lugar do palestrante quando ainda não confirmado. */
+  palestranteNota?: string;
   sala: string;
   inicio: string;
   fim: string;

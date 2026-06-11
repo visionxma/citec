@@ -52,6 +52,13 @@ export default function PalestraPage({ params }: { params: { slug: string } }) {
           </span>
         </div>
 
+        {sps.length === 0 && palestra.palestranteNota && (
+          <div className="mt-5 sm:mt-6 rounded-2xl sm:rounded-3xl glass p-4 sm:p-5">
+            <p className="text-[10px] uppercase tracking-[0.25em] text-pink-light">Palestrante</p>
+            <p className="font-display text-lg sm:text-2xl mt-1">{palestra.palestranteNota}</p>
+          </div>
+        )}
+
         {sps.length > 0 && (
           <div className="mt-5 sm:mt-6 space-y-3 sm:space-y-4">
             {sps.map((sp, i) => (
